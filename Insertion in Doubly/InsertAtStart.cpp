@@ -29,7 +29,7 @@ void print(Node *&head)
     cout << endl;
 }
 
-void InsertAtStart(Node *&tail, Node *&head, int d)
+void InsertAtStart(Node*tail , Node *&head, int d)
 {
 
     if (head == NULL)
@@ -53,13 +53,14 @@ int main()
 {
     Node *node1 = new Node(3);
     Node *head = node1;
+    Node*tail = node1;
 
     cout << "this is the list after insertion  :";
-    InsertAtStart(head, 22);
-    InsertAtStart(head, 23);
-    InsertAtStart(head, 24);
-    InsertAtStart(head, 25);
-    InsertAtStart(head, 26);
+    InsertAtStart(tail , head, 22);
+    InsertAtStart(tail , head, 23);
+    InsertAtStart(tail , head, 24);
+    InsertAtStart(tail , head, 25);
+    InsertAtStart(tail , head, 26);
 
     print(head);
 }
