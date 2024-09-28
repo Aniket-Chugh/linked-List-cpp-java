@@ -29,12 +29,24 @@ void print(Node *&head)
     cout << endl;
 }
 
-void InsertAtStart(Node *&head, int d)
+void InsertAtStart(Node *&tail, Node *&head, int d)
 {
-    Node *temp = new Node(d);
-    temp->next = head;
-    head->prev = temp;
-    head = temp;
+
+    if (head == NULL)
+    {
+        Node *temp = new Node(d);
+        head = temp;
+        tail = temp;
+    }
+
+    else
+    {
+
+        Node *temp = new Node(d);
+        temp->next = head;
+        head->prev = temp;
+        head = temp;
+    }
 }
 
 void InsertAtEnd(Node *&head, Node *&tail, int d)
@@ -64,13 +76,13 @@ int main()
     Node *tail = node1;
 
     cout << "this is the list after insertion  :";
-    InsertAtStart(head, 22);
-    InsertAtStart(head, 23);
-    InsertAtStart(head, 24);
-    InsertAtStart(head, 25);
-    InsertAtStart(head, 26);
+    InsertAtStart(tail , head, 22);
+    InsertAtStart(tail , head, 23);
+    InsertAtStart(tail , head, 24);
+    InsertAtStart(tail , head, 25);
+    InsertAtStart(tail , head, 26);
 
-    InsertAtEnd(tail, 345);
+    InsertAtEnd(head , tail, 345);
     print(head);
 }
 
