@@ -29,12 +29,24 @@ void print(Node *&head)
     cout << endl;
 }
 
-void InsertAtStart(Node *&head, int d)
+void InsertAtStart(Node *&tail, Node *&head, int d)
 {
-    Node *temp = new Node(d);
-    temp->next = head;
-    head->prev = temp;
-    head = temp;
+
+    if (head == NULL)
+    {
+        Node *temp = new Node(d);
+        head = temp;
+        tail = temp;
+    }
+
+    else
+    {
+
+        Node *temp = new Node(d);
+        temp->next = head;
+        head->prev = temp;
+        head = temp;
+    }
 }
 
 int main()
