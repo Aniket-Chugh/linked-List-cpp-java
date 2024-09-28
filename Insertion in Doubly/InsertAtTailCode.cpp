@@ -37,13 +37,24 @@ void InsertAtStart(Node *&head, int d)
     head = temp;
 }
 
-void InsertAtEnd(Node *&tail, int d)
+void InsertAtEnd(Node *&head, Node *&tail, int d)
 {
-    Node *temp = new Node(d);
 
-    tail->next = temp;
-    temp->prev = tail;
-    tail = temp;
+    if (tail == NULL)
+    {
+        Node *temp = new Node(d);
+        tail = temp;
+        head = temp;
+    }
+
+    else
+    {
+        Node *temp = new Node(d);
+
+        tail->next = temp;
+        temp->prev = tail;
+        tail = temp;
+    }
 }
 
 int main()
